@@ -3,7 +3,6 @@ MAINTAINER TAICHI KUSHIRO
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
-ENV TZ Asia/Tokyo
 
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get install -y --no-install-recommends \
