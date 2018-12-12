@@ -34,5 +34,7 @@ RUN mkdir -p ${PYENV_ROOT}/versions ${PYENV_ROOT}/shims
 RUN pyenv install 3.6.7 && \
     pyenv global 3.6.7 && \
     eval "$(pyenv init -)"
+    pip install pipenv && \
+    echo 'eval "$(pipenv --completion)"' >> ~/.bashrc
 
 CMD ["/bin/bash"]
