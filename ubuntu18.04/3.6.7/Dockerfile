@@ -23,7 +23,8 @@ RUN apt-get install -y --no-install-recommends \
     zlib1g-dev \
     ca-certificates \
     git \
-    python-dev
+    python-dev \
+    libjpeg-dev
 
 ENV PYENV_ROOT /usr/local/pyenv
 ENV PATH ${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}
@@ -32,8 +33,6 @@ RUN mkdir -p ${PYENV_ROOT}/versions ${PYENV_ROOT}/shims
 
 RUN pyenv install 3.6.7 && \
     pyenv global 3.6.7 && \
-    eval "$(pyenv init -)" && \
-    pip install pipenv && \
-    echo 'eval "$(pipenv --completion)"' >> ~/.bashrc
+    eval "$(pyenv init -)"
 
 CMD ["/bin/bash"]
